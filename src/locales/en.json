@@ -1,0 +1,17 @@
+{
+  "sectionName": "Section Name",
+  "add": "Add",
+  "addTask": "Add Task",
+  "taskDescription": "Task Description",
+  "noDescription": "No description provided",
+  "status": "Status",
+  "archiveTask": "Archive Task",
+  "deleteTask": "Delete Task",
+  "taskDetails": "Task Details",
+  "opened": "Opened",
+  "archivedTasks": "Archived Tasks",
+  "taskError": "Task name is required",
+  "sectionError": "Section name is required",
+  "error404": "Error 404",
+  "error404Return": "Return to Homepage"
+}

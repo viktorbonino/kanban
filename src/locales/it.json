@@ -1,0 +1,17 @@
+{
+  "sectionName": "Nome Sezione",
+  "add": "Aggiungi",
+  "addTask": "Aggiungi Task",
+  "taskDescription": "Descrizione Task",
+  "noDescription": "Nessuna descrizione presente",
+  "status": "Stato",
+  "archiveTask": "Archivia Task",
+  "deleteTask": "Elimina Task",
+  "taskDetails": "Dettagli Task",
+  "opened": "Aperto il",
+  "archivedTasks": "Task Archiviati",
+  "taskError": "Nome task obbligatorio",
+  "sectionError": "Nome sezione obbligatorio",
+  "error404": "Erore 404",
+  "error404Return": "Ritorna alla home"
+}
