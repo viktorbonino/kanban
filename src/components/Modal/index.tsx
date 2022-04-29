@@ -1,14 +1,14 @@
-import Modal from 'react-modal'
+import ReactModal from 'react-modal'
 import { XIcon } from '@heroicons/react/solid'
 import Button from 'ui/Button'
 import ModalContent from 'ui/ModalContent'
 import useModal from 'hooks/useModal'
 
-const SModal = ({ children }: { children: React.ReactNode }) => {
+const Modal = ({ children }: { children: React.ReactNode }) => {
   const { modal, closeModal } = useModal()
 
   return (
-    <Modal
+    <ReactModal
       isOpen={modal.isOpen}
       ariaHideApp={false}
       css={theme => ({
@@ -23,7 +23,7 @@ const SModal = ({ children }: { children: React.ReactNode }) => {
           alignItems: 'center',
         }
       })}
-      style={{ overlay: { background: 'rgba(0,0,0,0.4)', overflowY: 'auto' }}}
+      style={{ overlay: { background: 'rgba(0,0,0,0.4)', overflowX: 'hidden', }}}
       onRequestClose={() => closeModal()}
     >
       <ModalContent>
@@ -44,8 +44,8 @@ const SModal = ({ children }: { children: React.ReactNode }) => {
       
         {children}
       </ModalContent>
-    </Modal>
+    </ReactModal>
   )
 }
 
-export default SModal
+export default Modal
