@@ -16,7 +16,7 @@ Kanban board for terra-money front-end code assignment.
 
 - [x]  React
 - [x]  Built with SPA (Single Page Application)
-- [x]  Boilerplate, UI Kit can be customized according to your preference.
+- [x]  Boilerplate, UI Kit can be customized according to your preference. **(i implemented light/dark themes through emotion)**
 
 Column
 
