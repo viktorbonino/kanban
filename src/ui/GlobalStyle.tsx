@@ -21,6 +21,7 @@ const GlobalStyle = () => {
           font-family: 'Lato', sans-serif;
           line-height: 1.5;
           color: ${theme.text.primary};
+          overflow: hidden;
         }
       `}
     />

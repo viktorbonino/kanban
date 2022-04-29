@@ -1,3 +1,4 @@
+import { DroppableProvided } from 'react-beautiful-dnd'
 import { useSetRecoilState } from 'recoil'
 import { PlusIcon, PencilIcon, TrashIcon } from '@heroicons/react/solid'
 import Button from 'ui/Button'
@@ -9,9 +10,12 @@ import SectionsAtom from 'state/atoms/sections'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { IData } from 'state/selectors'
 
+interface Section {
 
-const Column = ({ children, section, provided }: { children: any, section: any, provided: any}) => {
+}
+const Column = ({ children, section, provided }: { children: React.ReactElement, section: IData, provided: DroppableProvided }) => {
   const [isEdit, setIsEdit] = useState(false)
 
   const setSections = useSetRecoilState(SectionsAtom)
@@ -36,7 +40,7 @@ const Column = ({ children, section, provided }: { children: any, section: any, 
     setIsEdit(false)
   }
   const deleteSection = () => setSections(oldSections => {
-    if(section.permanent) return oldSections
+    if(section.immutable) return oldSections
     return oldSections.filter(s => s.id !== section.id).map((s, index) => ({ ...s, order: index }))
   })
 
@@ -49,19 +53,18 @@ const Column = ({ children, section, provided }: { children: any, section: any, 
       <SectionTitle>
         <div css={{ display: 'flex', flexDirection: 'row', gap: '1rem', placeItems: 'center' }}>
           {isEdit ?
-            <form onSubmit={handleSubmit(editSection)} id={section.name}>
+            <form onSubmit={handleSubmit(editSection)} id={section.title}>
               <TextField
                 {...register('columnName', { required: true })}
                 onKeyPress={(e) => {
                   if(e.key === 'Escape') {
                     setIsEdit(false)
                     resetField('columnName')
-
                   }
                 }}
                 onBlur={() => {
                   setIsEdit(false)
-                  resetField('columnName', section.name)
+                  resetField('columnName')
                 }}
                 autoFocus
               /> 
@@ -75,7 +78,11 @@ const Column = ({ children, section, provided }: { children: any, section: any, 
         </div>
         <div css={{ display: 'flex', flexDirection: 'row' }}>
           {!section.immutable && 
-            <Button onClick={() => setIsEdit(true)} form={section.name}>
+            <Button onClick={() => {
+              setIsEdit(!isEdit)
+              if(isEdit) handleSubmit(editSection)()
+            }}
+            >
               <PencilIcon css={{ width: '1.5rem' }} />
             </Button>
           }

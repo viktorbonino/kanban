@@ -1,8 +1,12 @@
 import { selector } from 'recoil'
-import SectionsAtom from './atoms/sections'
-import TasksAtom from './atoms/tasks'
+import SectionsAtom, { ISection } from './atoms/sections'
+import TasksAtom, { ITask } from './atoms/tasks'
 
-export const dataSelector = selector({
+export interface IData extends ISection {
+  tasks: ITask[]
+}
+
+export const dataSelector = selector<IData[]>({
   key: 'getData',
   get: ({ get }) => {
     const sections = get(SectionsAtom)

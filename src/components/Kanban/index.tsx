@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { PlusIcon } from '@heroicons/react/solid'
+import { useTranslation } from 'react-i18next'
 import StyledKanban from 'ui/Kanban'
 import Button from 'ui/Button'
 import Column from 'components/Column'
@@ -18,6 +19,8 @@ const Kanban = () => {
   const setSections = useSetRecoilState(SectionsAtom)
 
   const { openModal, EModalContent } = useModal()
+
+  const { t } = useTranslation()
 
   const onDragEnd = (result: DropResult) => {
     setScrollSnap(true)
@@ -133,7 +136,7 @@ const Kanban = () => {
               <Button 
                 css={{ height: '3.5rem', width: '3.5rem'}}
                 onClick={() => openModal({
-                  title: 'Add Section',
+                  title: t('addSection'),
                   content: EModalContent.AddSection
                 })}
               >

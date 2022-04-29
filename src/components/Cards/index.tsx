@@ -1,8 +1,9 @@
-import { Draggable } from 'react-beautiful-dnd'
+import { Draggable,DroppableProvided } from 'react-beautiful-dnd'
+import { ITask } from 'state/atoms/tasks'
 import Card from './Card'
 
 
-const Cards = ({ tasks, provided } : { tasks: any, provided: any }) => {
+const Cards = ({ tasks, provided } : { tasks: ITask[], provided: DroppableProvided }) => {
 
   return (
     <div css={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

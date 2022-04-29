@@ -13,5 +13,6 @@
   "taskError": "Nome task obbligatorio",
   "sectionError": "Nome sezione obbligatorio",
   "error404": "Erore 404",
-  "error404Return": "Ritorna alla home"
+  "error404Return": "Ritorna alla home",
+  "addSection": "Aggiungi Sezione"
 }

@@ -9,7 +9,7 @@ const StyledKanban = styled.div<StyledKanbanProps>(props => ({
   gap: '1rem',
   overflow: 'auto',
   width: '100%',
-  minHeight: '90%',
+  flexGrow: 1,
   padding: '2rem',
   scrollSnapType: props.scrollSnap ? 'x mandatory' : 'none',
   scrollPaddingRight: '4.5rem',

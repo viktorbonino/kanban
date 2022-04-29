@@ -13,5 +13,6 @@
   "taskError": "Task name is required",
   "sectionError": "Section name is required",
   "error404": "Error 404",
-  "error404Return": "Return to Homepage"
+  "error404Return": "Return to Homepage",
+  "addSection": "Add Section"
 }
