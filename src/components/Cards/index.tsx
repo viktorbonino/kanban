@@ -8,7 +8,7 @@ const Cards = ({ tasks, provided } : { tasks: ITask[], provided: DroppableProvid
   return (
     <div css={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       {
-        tasks.map((task: any, index: number) => (
+        tasks.map((task: ITask, index: number) => (
           <Draggable
             key={task.id}
             draggableId={task.id}
