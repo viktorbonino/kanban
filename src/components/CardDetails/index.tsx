@@ -165,7 +165,7 @@ const CardDetails = () => {
           editTaskSection(e.target.value)
         }}
       >
-        {sections.map(section => <option css={{ borderRadius: '10px' }} value={section.id} key={section.id}>{section.title}</option>)}
+        {sections.map(section => <option css={{ borderRadius: '10px' }} value={section.id} key={section.id}>{t(section.title)}</option>)}
       </Select>
       
       <div css={{ display: 'flex', flexDirection: 'row', gap: '1rem', paddingTop: '4rem', paddingBottom: '2rem', width: '100%' }}>
