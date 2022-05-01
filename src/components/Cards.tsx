@@ -24,9 +24,7 @@ const Cards = ({ tasks, provided } : { tasks: ITask[], provided: DroppableProvid
                   opacity: snapshot.isDragging ? '0.7' : '1'
                 }}
               >
-                <Card
-                  task={task}
-                />
+                <Card task={task} />
               </div>
             )}
           </Draggable>
