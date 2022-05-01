@@ -11,23 +11,23 @@ const sectionsAtom = atom<ISection[]>({
   default: [
     {
       id: 'noStatus',
-      title: 'No status',
+      title: 'noStatus',
       order: 0,
       immutable: true,
     },
     {
       id: 'eadf064d-daba-41d6-add1-9cb74ff645f5',
-      title: 'To do',
+      title: 'toDo',
       order: 1,
     },
     {
       id: 'af0a831f-8235-4e08-93d4-f5aaf408e156',
-      title: 'In progress',
+      title: 'inProgress',
       order: 2,
     },
     {
       id: '43db1996-435e-4358-a628-901c466f8390',
-      title: 'Completed',
+      title: 'completed',
       order: 3,
     },
   ],

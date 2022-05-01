@@ -68,7 +68,7 @@ const Column = ({ children, section, provided }: { children: React.ReactElement,
                 }}
                 autoFocus
               /> 
-            </form> : section.title
+            </form> : t(section.title)
           }
           {section.tasks.length > 0 && !isEdit && 
             <TasksNumber>

@@ -28,7 +28,7 @@ const CardDetails = () => {
 
   const { t } = useTranslation()
 
-  const { register, handleSubmit, resetField, setValue, formState: { errors }, watch } = useForm<AddTaskData>({
+  const { register, handleSubmit, resetField, setValue, formState: { errors } } = useForm<AddTaskData>({
     defaultValues: {
       taskTitle: task?.title,
       taskDescription: task?.description,
@@ -59,6 +59,7 @@ const CardDetails = () => {
 
     if(task) {
       sourceSectionTasks.splice(task?.order, 1)
+
       sourceSectionTasks.map((t, i) => ({ ...t, order: i }))
       targetSectionTasks.push({ ...task, sectionId, order: targetSectionTasks.length })
     }
@@ -68,9 +69,9 @@ const CardDetails = () => {
 
   const deleteTask = () => {
     setTasks(oldTasks => {
-    let newTasks = [...oldTasks.filter(t => t.id !== task?.id)]
-    newTasks = newTasks.map((task, i) => ({ ...task, order: i }))
-    return newTasks
+      let newTasks = [...oldTasks.filter(t => t.id !== task?.id)]
+      newTasks = newTasks.map((task, i) => ({ ...task, order: i }))
+      return newTasks
     })
     closeModal()
   }
@@ -78,6 +79,7 @@ const CardDetails = () => {
   return (
     <div css={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <div css={{ display: 'flex', flexDirection: 'row', placeItems: 'center', justifyContent: 'space-between', gap: '0.5rem' }}>
+        
         {isEditTitle ? 
           <TextField
             {...register('taskTitle', { required: true })}
@@ -89,8 +91,8 @@ const CardDetails = () => {
           <div css={{ display: 'flex', flexDirection: 'row' }}>
             <Button 
               onClick={() => {
-                resetField('taskTitle')
                 setIsEditTitle(false)
+                resetField('taskTitle')
               }}
             >
               <XIcon css={{ width: '1.5rem' }} />

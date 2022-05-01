@@ -24,7 +24,7 @@ const ArchivedTasks = () => {
 
   const restoreTask = (task: ITask) => {
     setTasks(oldTasks => {
-      let noStatusTasks = oldTasks.filter(t => t.sectionId === 'noStatus')
+      let noStatusTasks = oldTasks.filter(t => t.sectionId === 'noStatus' && t.id !== task.id)
       let otherTasks = oldTasks.filter(t => t.id !== task.id)
       return [...otherTasks, { ...task, sectionId: 'noStatus', order: noStatusTasks.length, isArchived: false }]
     })

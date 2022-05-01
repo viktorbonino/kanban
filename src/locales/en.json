@@ -14,5 +14,9 @@
   "sectionError": "Section name is required",
   "error404": "Error 404",
   "error404Return": "Return to Homepage",
-  "addSection": "Add Section"
+  "addSection": "Add Section",
+  "noStatus": "No status",
+  "toDo": "To do",
+  "inProgress": "In Progress",
+  "completed": "Completed"
 }
