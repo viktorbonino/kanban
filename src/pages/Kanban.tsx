@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { PlusIcon, ArchiveIcon, MoonIcon, SunIcon } from '@heroicons/react/solid'
+import { ArchiveIcon, MoonIcon, SunIcon } from '@heroicons/react/solid'
 import { useRecoilState } from 'recoil'
 import { useTranslation } from 'react-i18next'
 import themeAtom from 'state/atoms/theme'
