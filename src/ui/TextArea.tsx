@@ -5,6 +5,9 @@ const TextArea = styled.textarea`
   padding: 0.75rem;
   border: none;
   width: 100%;
+  &:focus{
+    outline-color: ${props => props.theme.colors.secondary};
+  }
   &::placeholder {
     font-size: 1rem;
   }
