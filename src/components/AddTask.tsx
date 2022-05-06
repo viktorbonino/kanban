@@ -22,22 +22,19 @@ const AddCard = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<AddTaskData>()
 
   const addTask: SubmitHandler<AddTaskData> = (data) => {
-    if(data.taskName === '') return
-    else {
-        setTasks(oldTasks => [
-        ...oldTasks, 
-        { 
-          sectionId : modal.sectionId, 
-          id: uuidv4(), 
-          title: data.taskName,
-          description: data.taskDescription,
-          order: oldTasks.filter(task => task.sectionId === modal.sectionId).length,
-          createdAt: new Date().toISOString(),
-          isArchived: false
-        }
-      ])
-      closeModal()
-    }
+    setTasks(oldTasks => [
+      ...oldTasks, 
+      { 
+        sectionId : modal.sectionId, 
+        id: uuidv4(), 
+        title: data.taskName,
+        description: data.taskDescription,
+        order: oldTasks.filter(task => task.sectionId === modal.sectionId).length,
+        createdAt: new Date().toISOString(),
+        isArchived: false
+      }
+    ])
+    closeModal()
   }
   
   return (
